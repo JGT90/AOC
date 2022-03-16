@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AB32BD7-4996-4F16-B96A-FA3E26E95869}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AdventOfCode2021</RootNamespace>
+    <AssemblyName>AdventOfCode2021</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\Done\Day23.cs" />
+    <Compile Include="Functions\Done\Day24.cs" />
+    <Compile Include="Functions\Done\Day25.cs" />
+    <Compile Include="Functions\Done\Day22.cs" />
+    <Compile Include="Functions\Done\Day21.cs" />
+    <Compile Include="Functions\Done\Day20.cs" />
+    <Compile Include="Functions\Done\Day19.cs" />
+    <Compile Include="Functions\Done\Day18.cs" />
+    <Compile Include="Functions\Done\Day01.cs" />
+    <Compile Include="Functions\Done\Day10.cs" />
+    <Compile Include="Functions\Done\Day02.cs" />
+    <Compile Include="Functions\Done\Day03.cs" />
+    <Compile Include="Functions\Done\Day04.cs" />
+    <Compile Include="Functions\Done\Day05.cs" />
+    <Compile Include="Functions\Done\Day06.cs" />
+    <Compile Include="Functions\Done\Day07.cs" />
+    <Compile Include="Functions\Done\Day08.cs" />
+    <Compile Include="Functions\Done\Day09.cs" />
+    <Compile Include="Functions\Done\Day11.cs" />
+    <Compile Include="Functions\Done\Day12.cs" />
+    <Compile Include="Functions\Done\Day13.cs" />
+    <Compile Include="Functions\Done\Day14.cs" />
+    <Compile Include="Functions\Done\Day15.cs" />
+    <Compile Include="Functions\Done\Day16.cs" />
+    <Compile Include="Functions\Done\Day17.cs" />
+    <Compile Include="Functions\test.cs" />
+    <Compile Include="Functions\Transfer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InputFiles\" />
+  </ItemGroup>
+  <Import Project="..\AdventOfCode\AdventOfCode.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

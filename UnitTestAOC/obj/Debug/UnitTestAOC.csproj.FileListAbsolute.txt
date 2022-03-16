@@ -1,0 +1,2 @@
+C:\Users\jgt\source\repos\AdventOfCode\UnitTestAOC\obj\Debug\UnitTestAOC.csproj.AssemblyReference.cache
+C:\Users\jgt\source\repos\AdventOfCode\UnitTestAOC\obj\Debug\UnitTestAOC.csproj.CoreCompileInputs.cache
