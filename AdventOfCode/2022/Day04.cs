@@ -1,11 +1,21 @@
 ﻿using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day04 : DayN {
-        public override string Part1() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day04.txt";
+    class Day04 : DayN_2022 {
+        #region Constructor
+        public Day04() {
+            AddInputData(@"2022/Day04-JGT90.txt");
+        }
+        #endregion
+
+        #region Properties
+        protected override string PuzzleName => "Camp Cleanup";
+        #endregion
+
+        #region Functions
+        public override string SolvePartOne() {
             int lCountPairs = 0;
-            foreach (string lLine in File.ReadAllLines(lPath)) {
+            foreach (string lLine in RawData) {
                 string[] lSplit = lLine.Split(new char[] { ',', '-' });
                 int lMinA = int.Parse(lSplit[0]);
                 int lMaxA = int.Parse(lSplit[1]);
@@ -17,10 +27,9 @@ namespace AdventOfCode.Year2022 {
             return lCountPairs.ToString();
         }
 
-        public override string Part2() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day04.txt";
+        public override string SolvePartTwo() {
             int lOverlap = 0;
-            foreach (string lLine in File.ReadAllLines(lPath)) {
+            foreach (string lLine in RawData) {
                 string[] lSplit = lLine.Split(new char[] { ',', '-' });
                 int lMinA = int.Parse(lSplit[0]);
                 int lMaxA = int.Parse(lSplit[1]);
@@ -35,5 +44,6 @@ namespace AdventOfCode.Year2022 {
             }
             return lOverlap.ToString();
         }
+        #endregion
     }
 }

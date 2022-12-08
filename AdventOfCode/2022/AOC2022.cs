@@ -13,7 +13,7 @@ namespace AdventOfCode.Year2022 {
             Console.WriteLine("\t- Day 06:  Tuning Trouble");
             Console.WriteLine("\t- Day 07:  No Space Left On Device");
             Console.WriteLine("\t- Day 08:  Treetop Tree House");
-            //Console.WriteLine("\t- Day 09:  Smoke Basin");
+            Console.WriteLine("\t- Day 09:  Smoke Basin");
             //Console.WriteLine("\t- Day 10: Syntax Scoring");
             //Console.WriteLine("\t- Day 11: Dumbo Octopus");
             //Console.WriteLine("\t- Day 12: Passage Pathing");
@@ -36,32 +36,32 @@ namespace AdventOfCode.Year2022 {
                 case "01":
                 case "1":
                     Day01 week01 = new Day01();
-                    week01.Run();
+                    week01.SolveAllPuzzle();
                     break;
                 case "02":
                 case "2":
                     Day02 week02 = new Day02();
-                    week02.Run();
+                    week02.SolveAllPuzzle();
                     break;
                 case "03":
                 case "3":
                     Day03 week03 = new Day03();
-                    week03.Run();
+                    week03.SolveAllPuzzle();
                     break;
                 case "04":
                 case "4":
                     Day04 week04 = new Day04();
-                    week04.Run();
+                    week04.SolveAllPuzzle();
                     break;
                 case "05":
                 case "5":
                     Day05 week05 = new Day05();
-                    week05.Run();
+                    week05.SolveAllPuzzle();
                     break;
                 case "06":
                 case "6":
                     Day06 week06 = new Day06();
-                    week06.Run();
+                    week06.SolveAllPuzzle();
                     break;
                 case "07":
                 case "7":
@@ -73,11 +73,11 @@ namespace AdventOfCode.Year2022 {
                     Day08 week08 = new Day08();
                     week08.SolveAllPuzzle();
                     break;
-                //case "09":
-                //case "9":
-                //    Day09 week09 = new Day09();
-                //    week09.Run();
-                //    break;
+                case "09":
+                case "9":
+                    Day09 week09 = new Day09();
+                    week09.SolveAllPuzzle();
+                    break;
                 //case "10":
                 //    Day10 week10 = new Day10();
                 //    week10.Run();

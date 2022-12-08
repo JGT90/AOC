@@ -3,8 +3,19 @@ using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Year2022 {
-    class Day02 : DayN {
-        public override string Part1() {
+    class Day02 : DayN_2022 {
+        #region Constructor
+        public Day02() {
+            AddInputData(@"2022/Day02-JGT90.txt");
+        }
+        #endregion
+
+        #region Properties
+        protected override string PuzzleName => "Rock Paper Scissors";
+        #endregion
+
+        #region Functions
+        public override string SolvePartOne() {
             Dictionary<string, int> lConverter = new Dictionary<string, int>();
             lConverter.Add("A", 1);
             lConverter.Add("X", 1);
@@ -12,9 +23,8 @@ namespace AdventOfCode.Year2022 {
             lConverter.Add("Y", 2);
             lConverter.Add("C", 3);
             lConverter.Add("Z", 3);
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day02.txt";
             double lTotalScore = 0;
-            foreach (string lLine in File.ReadAllLines(lPath)) {
+            foreach (string lLine in RawData) {
                 string[] lSplit = lLine.Split(' ');
                 int lPlayerA = lConverter[lSplit[0]];
                 int lPlayerB = lConverter[lSplit[1]];
@@ -39,7 +49,7 @@ namespace AdventOfCode.Year2022 {
             return lTotalScore.ToString();
         }
 
-        public override string Part2() {
+        public override string SolvePartTwo() {
             Dictionary<string, int> lConverter = new Dictionary<string, int>();
             lConverter.Add("A", 1);
             lConverter.Add("X", 1);
@@ -47,9 +57,8 @@ namespace AdventOfCode.Year2022 {
             lConverter.Add("Y", 2);
             lConverter.Add("C", 3);
             lConverter.Add("Z", 3);
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day02.txt";
             double lTotalScore = 0;
-            foreach (string lLine in File.ReadAllLines(lPath)) {
+            foreach (string lLine in RawData) {
                 string[] lSplit = lLine.Split(' ');
                 int lPlayerA = lConverter[lSplit[0]];
                 int lPlayerB = lConverter[lSplit[1]];
@@ -83,5 +92,6 @@ namespace AdventOfCode.Year2022 {
             }
             return lTotalScore.ToString();
         }
+        #endregion
     }
 }

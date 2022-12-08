@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day03 : DayN {
-        public override string Part1() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day03.txt";
+    class Day03 : DayN_2022 {
+        #region Constructor
+        public Day03() {
+            AddInputData(@"2022/Day03-JGT90.txt");
+        }
+        #endregion
+
+        #region Properties
+        protected override string PuzzleName => "Rucksack Reorganization";
+        #endregion
+
+        #region Functions
+        public override string SolvePartOne() {
             double lPrioritySum = 0;
-            foreach(string lLine in File.ReadAllLines(lPath)) {
+            foreach(string lLine in RawData) {
                 string lFirstCompartment = lLine.Substring(0, lLine.Length / 2);
                 string lSecondCompartment = lLine.Substring(lLine.Length / 2);
                 foreach (char c in lSecondCompartment) {
@@ -28,14 +38,12 @@ namespace AdventOfCode.Year2022 {
             return lPrioritySum.ToString();
         }
 
-        public override string Part2() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day03.txt";
+        public override string SolvePartTwo() {
             double lPrioritySum = 0;
-            string[] lLines = File.ReadAllLines(lPath);
-            for (int i = 0; i < lLines.Length; i++) {
-                foreach (char c in lLines[i]) {
-                    foreach (char cc in lLines[i+1]) {
-                        foreach(char ccc in lLines[i+2]) {
+            for (int i = 0; i < RawData.Length; i++) {
+                foreach (char c in RawData[i]) {
+                    foreach (char cc in RawData[i+1]) {
+                        foreach(char ccc in RawData[i+2]) {
                             if (c == cc && cc == ccc) {
                                 int lScore = (int)c - 96;
                                 if (lScore < 0) {
@@ -52,5 +60,6 @@ namespace AdventOfCode.Year2022 {
             }
             return lPrioritySum.ToString();
         }
+        #endregion
     }
 }
