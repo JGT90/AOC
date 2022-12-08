@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day19 : DayN {
         List<Scanner> mScanners = new List<Scanner>();
         public override string Part1() {

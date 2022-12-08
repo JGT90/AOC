@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace AdventOfCode2022 {
+namespace AdventOfCode.Year2022 {
     class Day07 {
         CustomDirectory MainDirectory;
         public string DoPartA() {

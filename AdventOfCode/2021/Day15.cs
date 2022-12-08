@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day15 : DayN {
         const int START_INDEX = 0;
         int Y_SIZE;

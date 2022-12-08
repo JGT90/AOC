@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day04 : DayN {
         static int[] mCardDrawn;
         static List<int[,]> mBingoFields;

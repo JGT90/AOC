@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day23 : DayN {
 
         static int[] k_home_columns = { 2, 4, 6, 8 };

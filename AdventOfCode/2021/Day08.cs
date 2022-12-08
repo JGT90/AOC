@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day08 : DayN {
         static string[] mSignalPattern;
         static string[] mOutputValues;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day18 : DayN {
         List<Snailfish> mSnailfishes;
         string[] mInput;

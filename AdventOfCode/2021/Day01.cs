@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode {
+﻿namespace AdventOfCode.Year2021 {
     internal class Day01 : DayN {
         static int[] mValues;
         public override string Part1() {

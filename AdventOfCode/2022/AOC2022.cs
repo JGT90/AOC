@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2022 {
-    class Program {
-        static void Main(string[] args) {
+namespace AdventOfCode.Year2022 {
+    internal class AOC2022 {
+        public static void Puzzle() {
             string lExit = string.Empty;
             do {
                 Console.WriteLine($"Hello to my implementation of AdventOfCode 2022");

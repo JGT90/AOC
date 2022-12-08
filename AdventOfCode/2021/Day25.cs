@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day25 : DayN {
         char[,] mValues;
 

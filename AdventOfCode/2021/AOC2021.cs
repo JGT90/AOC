@@ -1,39 +1,39 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace AdventOfCode {
-    internal class Program {
-        static void Main(string[] args) {
+namespace AdventOfCode.Year2021 {
+    internal class AOC2021 {
+        public static void Puzzle() {
             bool lDone = false;
             while (!lDone) {
                 Console.WriteLine("Which week do you want to solve?");
-                Console.WriteLine("\t- Week 1:  Sonar Sweep");
-                Console.WriteLine("\t- Week 2:  Dive!");
-                Console.WriteLine("\t- Week 3:  Binary Diagnostic");
-                Console.WriteLine("\t- Week 4:  Giant Squid");
-                Console.WriteLine("\t- Week 5:  Hydrothermal Venture");
-                Console.WriteLine("\t- Week 6:  Lanternfish");
-                Console.WriteLine("\t- Week 7:  The Treachery of Whales");
-                Console.WriteLine("\t- Week 8:  Seven Segment Search");
-                Console.WriteLine("\t- Week 9:  Smoke Basin");
-                Console.WriteLine("\t- Week 10: Syntax Scoring");
-                Console.WriteLine("\t- Week 11: Dumbo Octopus");
-                Console.WriteLine("\t- Week 12: Passage Pathing");
-                Console.WriteLine("\t- Week 13: Transparent Origami");
-                Console.WriteLine("\t- Week 14: Extended Polymerization");
-                Console.WriteLine("\t- Week 15: Chiton");
-                Console.WriteLine("\t- Week 16: Packet Decoder");
-                Console.WriteLine("\t- Week 17: Trick Shot");
-                Console.WriteLine("\t- Week 18: Snailfish");
-                Console.WriteLine("\t- Week 19: Beacon Scanner");
-                Console.WriteLine("\t- Week 20: Trench Map");
-                Console.WriteLine("\t- Week 21: Dirac Dice");
-                Console.WriteLine("\t- Week 22: Reactor Reboot");
-                Console.WriteLine("\t- Week 23: Amphipod");
-                Console.WriteLine("\t- Week 24: Arithmetic Logic Unit");
-                Console.WriteLine("\t- Week 25: Sea Cucumber");
+                Console.WriteLine("\t- Day 01:  Sonar Sweep");
+                Console.WriteLine("\t- Day 02:  Dive!");
+                Console.WriteLine("\t- Day 03:  Binary Diagnostic");
+                Console.WriteLine("\t- Day 04:  Giant Squid");
+                Console.WriteLine("\t- Day 05:  Hydrothermal Venture");
+                Console.WriteLine("\t- Day 06:  Lanternfish");
+                Console.WriteLine("\t- Day 07:  The Treachery of Whales");
+                Console.WriteLine("\t- Day 08:  Seven Segment Search");
+                Console.WriteLine("\t- Day 09:  Smoke Basin");
+                Console.WriteLine("\t- Day 10: Syntax Scoring");
+                Console.WriteLine("\t- Day 11: Dumbo Octopus");
+                Console.WriteLine("\t- Day 12: Passage Pathing");
+                Console.WriteLine("\t- Day 13: Transparent Origami");
+                Console.WriteLine("\t- Day 14: Extended Polymerization");
+                Console.WriteLine("\t- Day 15: Chiton");
+                Console.WriteLine("\t- Day 16: Packet Decoder");
+                Console.WriteLine("\t- Day 17: Trick Shot");
+                Console.WriteLine("\t- Day 18: Snailfish");
+                Console.WriteLine("\t- Day 19: Beacon Scanner");
+                Console.WriteLine("\t- Day 20: Trench Map");
+                Console.WriteLine("\t- Day 21: Dirac Dice");
+                Console.WriteLine("\t- Day 22: Reactor Reboot");
+                Console.WriteLine("\t- Day 23: Amphipod");
+                Console.WriteLine("\t- Day 24: Arithmetic Logic Unit");
+                Console.WriteLine("\t- Day 25: Sea Cucumber");
                 string lInput = Console.ReadLine();
-                Stopwatch lStopwatch = System.Diagnostics.Stopwatch.StartNew();
+                Stopwatch lStopwatch = Stopwatch.StartNew();
                 switch (lInput) {
                     case "01":
                     case "1":

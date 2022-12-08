@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day13 : DayN {
         bool[,] TransparentList = new bool[1311, 895];
         List<FoldingInstruction> FoldingInstructions = new List<FoldingInstruction>();

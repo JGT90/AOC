@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode {
+﻿namespace AdventOfCode.Year2021 {
     internal class Day02 : DayN {
         const string FORWARD = "forward";
         const string DOWN = "down";

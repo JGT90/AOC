@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day17 : DayN {
         int mTargetX1;
         int mTargetX2;

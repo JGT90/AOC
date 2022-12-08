@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode {
+﻿namespace AdventOfCode.Year2021 {
     internal class Day21 : DayN {
         private double Player1WinCount;
         private double Player2WinCount;

@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode {
+﻿namespace AdventOfCode.Year2021 {
     internal class Day11 : DayN {
         const int SIZE = 10;
         static int[,] mInput = new int[SIZE, SIZE];

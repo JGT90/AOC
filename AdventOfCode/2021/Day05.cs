@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day05 : DayN {
         static Point[] mStartPoints;
         static Point[] mEndPoints;

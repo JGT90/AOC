@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day14 : DayN {
         string mStartString = string.Empty;
         Dictionary<string, string> mPolymer = new Dictionary<string, string>();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day06 : DayN {
         static double[] mLaternFishPopulation;
         static double[] mTemp;

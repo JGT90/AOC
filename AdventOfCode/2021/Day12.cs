@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day12 : DayN {
         Dictionary<string, Node<string>> mNodes = new Dictionary<string, Node<string>>();
         static int PathCount;

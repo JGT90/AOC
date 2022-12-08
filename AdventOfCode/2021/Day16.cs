@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode {
+﻿namespace AdventOfCode.Year2021 {
     internal class Day16 : DayN {
         Week16Lib_JGT.Week16 mWeek16 = new Week16Lib_JGT.Week16();
 

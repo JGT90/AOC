@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace AdventOfCode2022 {
+namespace AdventOfCode.Year2022 {
     class Day01 {
         int[] mElfes;
         public string DoPartA() {

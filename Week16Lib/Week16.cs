@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SEGCC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Week16Lib_JGT {
-    public class Week16 : AdventOfCode.IWeek16 {
+    public class Week16 : IWeek16 {
 
         string mBinaryMessage;
         int mVersionCount = 0;

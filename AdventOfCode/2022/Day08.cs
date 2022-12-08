@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace AdventOfCode2022 {
+namespace AdventOfCode.Year2022 {
     class Day08 {
         int[,] TreeGrid;
         public string DoPartA() {

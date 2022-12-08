@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace AdventOfCode2022 {
+namespace AdventOfCode.Year2022 {
     class Day04 {
         public string DoPartA() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day04.txt";

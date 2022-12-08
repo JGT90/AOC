@@ -1,7 +1,6 @@
-﻿using AdventOfCode;
-using System;
+﻿using System;
 
-namespace AdventOfCode {
+namespace AdventOfCode.Year2021 {
     internal class Day20 : DayN {
         int[] mEnhancementLookup;
         int[,] mImage;
@@ -91,7 +90,7 @@ namespace AdventOfCode {
             int lOffset = 5;
             int[,] lResult = new int[ySize + 2 * lOffset, xSize + 2 * lOffset];
             for (int y = 0; y < ySize + 2 * lOffset; y++) {
-                for (int x = 0; x < xSize + 2* lOffset; x++) {
+                for (int x = 0; x < xSize + 2 * lOffset; x++) {
                     if (y < lOffset || y > ySize - lOffset || x < lOffset || x > xSize - lOffset) lResult[y, x] = aBackground;
                     else continue;
                 }
