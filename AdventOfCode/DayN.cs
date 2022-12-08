@@ -21,6 +21,8 @@ namespace AdventOfCode
     /// </summary>
     public abstract class DayN
     {
+        const string _relativePath = @"..\..\..\..\InputData\";
+
         string newline = Environment.NewLine; // == "\r\n" on Windows; "\n" on Linux, MacOS
         /// <summary>
         /// Use for your Part1 or Part2 debug output, if needed.
@@ -34,6 +36,10 @@ namespace AdventOfCode
         /// <summary>
         /// Execute Part1 and Part2, print out results with profile data, pause for user to gaze
         /// </summary>
+        /// 
+        protected string[] ReadFile(string FilePath, bool RemoveEmptyLines = false) {
+            return File.ReadAllText(_relativePath + FilePath).Replace("\r", string.Empty).Split(new char[] { '\n' }, RemoveEmptyLines ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+        }
         public virtual void Run()
         {
             Stopwatch outer_stopwatch = Stopwatch.StartNew();
