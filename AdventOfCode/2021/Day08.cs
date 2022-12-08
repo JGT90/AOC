@@ -1,7 +1,6 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day08 : DayN {
         static string[] mSignalPattern;
         static string[] mOutputValues;

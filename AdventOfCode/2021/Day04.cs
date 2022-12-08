@@ -1,9 +1,8 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day04 : DayN {
         static int[] mCardDrawn;
         static List<int[,]> mBingoFields;

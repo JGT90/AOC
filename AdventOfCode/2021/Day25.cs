@@ -1,9 +1,6 @@
-﻿using SEGCC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day25 : DayN {
         char[,] mValues;
 
@@ -84,7 +81,7 @@ namespace AOC2021 {
         }
 
         public override string Part2() {
-            
+
 
             return $"";
         }

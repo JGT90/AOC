@@ -1,7 +1,4 @@
-﻿using SEGCC;
-using System;
-
-namespace AOC2021 {
+﻿namespace AdventOfCode {
     internal class Day02 : DayN {
         const string FORWARD = "forward";
         const string DOWN = "down";

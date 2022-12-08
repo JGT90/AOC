@@ -1,8 +1,7 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day13 : DayN {
         bool[,] TransparentList = new bool[1311, 895];
         List<FoldingInstruction> FoldingInstructions = new List<FoldingInstruction>();
@@ -54,7 +53,7 @@ namespace AOC2021 {
                 string[,] lCheck = new string[6, 4];
                 for (int x = 0; x < 4; x++) {
                     for (int y = 0; y < 6; y++) {
-                        if (TransparentList[x + 4 * i+i, y]) lCheck[y, x] = "#";
+                        if (TransparentList[x + 4 * i + i, y]) lCheck[y, x] = "#";
                         else lCheck[y, x] = ".";
                     }
                 }
@@ -97,7 +96,7 @@ namespace AOC2021 {
             EqualityComparer<T> comparer = EqualityComparer<T>.Default;
             for (int x = 0; x < a1.GetLength(0); x++) {
                 for (int y = 0; y < a1.GetLength(1); y++) {
-                    if (!comparer.Equals(a1[x,y], a2[x,y])) return false;
+                    if (!comparer.Equals(a1[x, y], a2[x, y])) return false;
                 }
             }
             return true;

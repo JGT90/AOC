@@ -1,8 +1,7 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day19 : DayN {
         List<Scanner> mScanners = new List<Scanner>();
         public override string Part1() {
@@ -28,7 +27,7 @@ namespace AOC2021 {
             foreach (Beacon lBeacon in mScanners[0].Beacons) {
                 lBeacon.AbsoluteLocation = lBeacon.RelativeeLocation;
             }
-            START_OVER:
+        START_OVER:
             for (int i = 0; i < mScanners.Count; i++) {
                 for (int j = 0; j < mScanners.Count; j++) {
                     if (i == j) continue;
@@ -187,12 +186,12 @@ namespace AOC2021 {
                                 lOverlaps++;
                             }
                         }
-                        OVERJUMP_N: { }
+                    OVERJUMP_N: { }
                     }
                 }
                 if (lOverlaps >= 11) goto STEP_OUT;
             }
-            STEP_OUT: { }
+        STEP_OUT: { }
             if (lOverlaps >= 11) {
                 int[] lDelta1 = MatrixSub(lTemp.Item2.AbsoluteLocation, lTemp.Item1.AbsoluteLocation);
                 int[] lDelta2 = MatrixSub(lTemp.Item4.RelativeeLocation, lTemp.Item3.RelativeeLocation);

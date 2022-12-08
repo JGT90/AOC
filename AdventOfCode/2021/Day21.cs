@@ -1,6 +1,4 @@
-﻿using SEGCC;
-
-namespace AOC2021 {
+﻿namespace AdventOfCode {
     internal class Day21 : DayN {
         private double Player1WinCount;
         private double Player2WinCount;

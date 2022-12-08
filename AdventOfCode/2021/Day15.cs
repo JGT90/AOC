@@ -1,8 +1,6 @@
-﻿using SEGCC;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day15 : DayN {
         const int START_INDEX = 0;
         int Y_SIZE;
@@ -36,8 +34,8 @@ namespace AOC2021 {
                 for (int x = 0; x < X_SIZE; x++) {
                     int xAdd = x / xOld;
                     int yAdd = y / yOld;
-                    int lNewValue = mInput[x % xOld,y % yOld] + xAdd + yAdd;
-                    lTemp[x,y] = lNewValue > 9 ? lNewValue % 10 + 1: lNewValue;
+                    int lNewValue = mInput[x % xOld, y % yOld] + xAdd + yAdd;
+                    lTemp[x, y] = lNewValue > 9 ? lNewValue % 10 + 1 : lNewValue;
                 }
             }
             mInput = lTemp;

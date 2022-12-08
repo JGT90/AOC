@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-
-using SEGCC;
-
-namespace AOC2021 {
+﻿namespace AdventOfCode {
     internal class Day11 : DayN {
         const int SIZE = 10;
-        static int[,] mInput = new int[SIZE,SIZE];
-        static int[,] mTemp = new int[SIZE,SIZE];
+        static int[,] mInput = new int[SIZE, SIZE];
+        static int[,] mTemp = new int[SIZE, SIZE];
         const int STEPS_TO_DO = 100;
         static int FLASH_COUNT;
         static int STEPS_COUNT;
@@ -19,15 +12,15 @@ namespace AOC2021 {
             string[] lInput = System.IO.File.ReadAllLines(@"..\..\..\Inputs\Week11.txt");
             for (int i = 0; i < lInput.Length; i++) {
                 for (int j = 0; j < lInput[i].Length; j++) {
-                    mInput[i,j] = lInput[i][j] - 48;
-                    mTemp[i,j] = lInput[i][j] - 48;
+                    mInput[i, j] = lInput[i][j] - 48;
+                    mTemp[i, j] = lInput[i][j] - 48;
                 }
             }
             for (int step = 0; step < STEPS_TO_DO; step++) {
                 // increase by 1
                 IncreaseEverythingByOne();
                 // check for flash
-                bool[,] lFlashed = new bool[SIZE,SIZE];
+                bool[,] lFlashed = new bool[SIZE, SIZE];
                 Flashing(lFlashed);
                 //for (int y = 0; y < SIZE; y++) {
                 //    Console.WriteLine("");
@@ -80,7 +73,7 @@ namespace AOC2021 {
             for (int y = 0; y < SIZE; y++) {
                 for (int x = 0; x < SIZE; x++) {
                     if (!aFlashed[y, x]) {
-                        if (mInput[y,x] > 9) {
+                        if (mInput[y, x] > 9) {
                             mInput[y, x] = 0;
                             aFlashed[y, x] = true;
                             lFlashed = true;
@@ -92,7 +85,7 @@ namespace AOC2021 {
             }
             if (lFlashed) Flashing(aFlashed);
         }
-        
+
         private void IncreaseAdjacent(bool[,] aFlashed, int aY, int aX) {
             for (int y = aY - 1; y < aY + 2; y++) {
                 if (y >= 0 && y < 10) {

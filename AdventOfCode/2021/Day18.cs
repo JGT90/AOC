@@ -1,9 +1,7 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day18 : DayN {
         List<Snailfish> mSnailfishes;
         string[] mInput;
@@ -15,7 +13,7 @@ namespace AOC2021 {
             foreach (string line in mInput) {
                 mIndex = 0;
                 List<Snailfish> lTempFishes = new List<Snailfish>();
-                GetSnailfish(lTempFishes, - 1, line, 0, true, 0);
+                GetSnailfish(lTempFishes, -1, line, 0, true, 0);
                 Add(lTempFishes);
                 if (!lFirstAdd) {
                     SnailfishAction();
@@ -74,7 +72,7 @@ namespace AOC2021 {
                 }
             }
             while (lFishes.Count > 1) {
-                for (int i = 0; i < lFishes.Count -1; i++) {
+                for (int i = 0; i < lFishes.Count - 1; i++) {
                     if (lFishes[i].Level == lFishes[i].Level) {
                         lFishes[i].Level--;
                         lFishes[i].Magnitude = 3 * lFishes[i].Magnitude + 2 * lFishes[i + 1].Magnitude;
@@ -85,13 +83,13 @@ namespace AOC2021 {
             return lFishes[0].Magnitude;
         }
 
-        private int GetSnailfish(List<Snailfish> aFishes, int aIndex,  string aLine, int aLevel, bool aLeft, int aFishIndex) {
+        private int GetSnailfish(List<Snailfish> aFishes, int aIndex, string aLine, int aLevel, bool aLeft, int aFishIndex) {
             Snailfish lFish = new Snailfish();
             bool lInserted = false;
-            while (aIndex < aLine.Length- 1) {
+            while (aIndex < aLine.Length - 1) {
                 aIndex++;
                 if (aLine[aIndex] == '[') {
-                    aIndex = GetSnailfish(aFishes, aIndex, aLine, aLevel+ 1, true, ++aFishIndex);
+                    aIndex = GetSnailfish(aFishes, aIndex, aLine, aLevel + 1, true, ++aFishIndex);
                 } else if (aLine[aIndex] == ']') {
                     return aIndex;
                 } else if (aLine[aIndex] == ',') {
@@ -136,7 +134,7 @@ namespace AOC2021 {
                             mSnailfishes[i - 1].X = mSnailfishes[i - 1].X + mSnailfishes[i].X;
                         } else {
                             if (mSnailfishes[i + 1].X != -1) mSnailfishes[i + 1].X = mSnailfishes[i + 1].X + mSnailfishes[i].Y;
-                            else if (mSnailfishes[i + 1].Y != -1) mSnailfishes[i + 1].Y = mSnailfishes[i + 1].Y + mSnailfishes[i].Y; 
+                            else if (mSnailfishes[i + 1].Y != -1) mSnailfishes[i + 1].Y = mSnailfishes[i + 1].Y + mSnailfishes[i].Y;
                             if (mSnailfishes[i - 1].Y != -1) mSnailfishes[i - 1].Y = mSnailfishes[i - 1].Y + mSnailfishes[i].X;
                             else if (mSnailfishes[i - 1].X != -1) mSnailfishes[i - 1].X = mSnailfishes[i - 1].X + mSnailfishes[i].X;
                             bool lInsert = true;
@@ -152,7 +150,7 @@ namespace AOC2021 {
                                     lInsert = false;
                                 }
                             }
-                            if (lInsert) mSnailfishes.Insert(i+1, new Snailfish() { X = 0, Level = mSnailfishes[i].Level-1 });
+                            if (lInsert) mSnailfishes.Insert(i + 1, new Snailfish() { X = 0, Level = mSnailfishes[i].Level - 1 });
                         }
                         mSnailfishes.RemoveAt(i);
                         return true;
@@ -185,7 +183,7 @@ namespace AOC2021 {
                     if (mSnailfishes[i].X == -1) mSnailfishes[i] = lFish;
                     else {
                         mSnailfishes[i].Y = -1;
-                        mSnailfishes.Insert(i+1, lFish);
+                        mSnailfishes.Insert(i + 1, lFish);
                     }
                     return true;
                 }

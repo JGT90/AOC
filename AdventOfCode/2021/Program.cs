@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Program {
         static void Main(string[] args) {
             bool lDone = false;

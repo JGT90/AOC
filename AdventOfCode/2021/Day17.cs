@@ -1,9 +1,8 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day17 : DayN {
         int mTargetX1;
         int mTargetX2;
@@ -25,18 +24,18 @@ namespace AOC2021 {
                 if (lTarget >= mTargetX1 && lTarget <= mTargetX2) {
                     mPossibleXVelocities.Add(i);
                     break;
-                } 
+                }
             }
-            for (int i = mPossibleXVelocities[0]; i < mTargetX2; i++) mPossibleXVelocities.Add(i+1);
+            for (int i = mPossibleXVelocities[0]; i < mTargetX2; i++) mPossibleXVelocities.Add(i + 1);
             mPossibleYVelocities = new List<int>();
             int lYMax = 0;
             for (int i = -1000; i < 1000; i++) {
                 int lSign = 1;
                 if (i != 0) lSign = i / Math.Abs(i);
                 int lTop = TriangularNumber(Math.Abs(i)) * lSign;
-                for (int y = i+1; y < 1000; y++) {
+                for (int y = i + 1; y < 1000; y++) {
                     int lFall = TriangularNumber(y);
-                    if ((lTop - lFall) >= mTargetY1 && (lTop - lFall)<= mTargetY2) {
+                    if ((lTop - lFall) >= mTargetY1 && (lTop - lFall) <= mTargetY2) {
                         if (lYMax < i) lYMax = i;
                     }
                 }
@@ -55,7 +54,7 @@ namespace AOC2021 {
             int lHitCount = 0;
             mPossibleXVelocities = mPossibleXVelocities.Distinct().ToList();
             mPossibleYVelocities = mPossibleYVelocities.Distinct().ToList();
-            foreach( int x in mPossibleXVelocities) {
+            foreach (int x in mPossibleXVelocities) {
                 foreach (int y in mPossibleYVelocities) {
                     int xvel = x;
                     int yvel = y;
@@ -74,7 +73,7 @@ namespace AOC2021 {
                     }
                 }
             }
-           
+
             return $"{lHitCount}";
         }
     }

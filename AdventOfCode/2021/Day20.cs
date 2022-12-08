@@ -1,7 +1,7 @@
-﻿using SEGCC;
+﻿using AdventOfCode;
 using System;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day20 : DayN {
         int[] mEnhancementLookup;
         int[,] mImage;

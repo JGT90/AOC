@@ -1,7 +1,4 @@
-﻿using SEGCC;
-using System;
-
-namespace AOC2021 {
+﻿namespace AdventOfCode {
     internal class Day01 : DayN {
         static int[] mValues;
         public override string Part1() {

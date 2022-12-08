@@ -1,9 +1,7 @@
-﻿using SEGCC;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day12 : DayN {
         Dictionary<string, Node<string>> mNodes = new Dictionary<string, Node<string>>();
         static int PathCount;

@@ -1,9 +1,6 @@
-﻿using SEGCC;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day09 : DayN {
         static int[,] mHeightMap;
         static bool[,] mDone;

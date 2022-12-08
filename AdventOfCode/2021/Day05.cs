@@ -1,8 +1,7 @@
-﻿using SEGCC;
-using System;
-using System.Windows;
+﻿using System;
+using System.Drawing;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day05 : DayN {
         static Point[] mStartPoints;
         static Point[] mEndPoints;
@@ -15,8 +14,8 @@ namespace AOC2021 {
             mArea = new int[AREA_SIZE, AREA_SIZE];
             for (int i = 0; i < lines.Length; i++) {
                 string[] lSplits = lines[i].Split(new string[] { ",", "->" }, StringSplitOptions.RemoveEmptyEntries);
-                mStartPoints[i] = new Point(Convert.ToDouble(lSplits[0]), Convert.ToDouble(lSplits[1]));
-                mEndPoints[i] = new Point(Convert.ToDouble(lSplits[2]), Convert.ToDouble(lSplits[3]));
+                mStartPoints[i] = new Point(Convert.ToInt32(lSplits[0]), Convert.ToInt32(lSplits[1]));
+                mEndPoints[i] = new Point(Convert.ToInt32(lSplits[2]), Convert.ToInt32(lSplits[3]));
             }
             for (int i = 0; i < mStartPoints.Length; i++) {
                 if (!IsVerticalOrHorizontal(i)) continue;

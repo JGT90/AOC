@@ -1,8 +1,7 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day06 : DayN {
         static double[] mLaternFishPopulation;
         static double[] mTemp;

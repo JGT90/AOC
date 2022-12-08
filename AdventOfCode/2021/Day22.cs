@@ -1,8 +1,7 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day22 : DayN {
         Cube[] mCubes;
 
@@ -88,24 +87,24 @@ namespace AOC2021 {
                 xMin1 = aCube2.XMin;
             }
 
-            if( yMin1<aCube2.YMin ) {
+            if (yMin1 < aCube2.YMin) {
                 aCubes.Add(new Cube(aCube1.TurnOn, xMin1, xMax1, yMin1, aCube2.YMin - 1, zMin1, zMax1));
                 yMin1 = aCube2.YMin;
             }
-            if( zMin1<aCube2.ZMin ) {
+            if (zMin1 < aCube2.ZMin) {
                 aCubes.Add(new Cube(aCube1.TurnOn, xMin1, xMax1, yMin1, yMax1, zMin1, aCube2.ZMin - 1));
                 zMin1 = aCube2.ZMin;
             }
 
-            if (xMax2 <= xMax1 ) {
+            if (xMax2 <= xMax1) {
                 aCubes.Add(new Cube(aCube1.TurnOn, xMax2, xMax1, yMin1, yMax1, zMin1, zMax1));
                 xMax1 = aCube2.XMax;
             }
-            if( yMax2 <= yMax1 ){
+            if (yMax2 <= yMax1) {
                 aCubes.Add(new Cube(aCube1.TurnOn, xMin1, xMax1, yMax2, yMax1, zMin1, zMax1));
                 yMax1 = aCube2.YMax;
             }
-            if( zMax2 <= zMax1) {
+            if (zMax2 <= zMax1) {
                 aCubes.Add(new Cube(aCube1.TurnOn, xMin1, xMax1, yMin1, yMax1, zMax2, zMax1));
                 zMax1 = aCube2.ZMax;
             }

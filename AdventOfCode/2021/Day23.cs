@@ -1,9 +1,8 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day23 : DayN {
 
         static int[] k_home_columns = { 2, 4, 6, 8 };

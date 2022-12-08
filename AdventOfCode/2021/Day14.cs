@@ -1,9 +1,8 @@
-﻿using SEGCC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AOC2021 {
+namespace AdventOfCode {
     internal class Day14 : DayN {
         string mStartString = string.Empty;
         Dictionary<string, string> mPolymer = new Dictionary<string, string>();
@@ -37,12 +36,12 @@ namespace AOC2021 {
             mAppearance[aStartString[aStartString.Length - 1].ToString()]++;
             for (int i = 0; i < aSteps; i++) {
                 Dictionary<string, double> lTemp = new Dictionary<string, double>();
-                foreach(var item in mPolymerQuantity) {
+                foreach (var item in mPolymerQuantity) {
                     string lAdjacent = mPolymer[item.Key];
-                    mAppearance[lAdjacent]+=item.Value;
+                    mAppearance[lAdjacent] += item.Value;
                     try {
-                        lTemp[$"{item.Key[0]}{lAdjacent}"]+= item.Value;
-                    } catch(Exception) {
+                        lTemp[$"{item.Key[0]}{lAdjacent}"] += item.Value;
+                    } catch (Exception) {
                         lTemp.Add($"{item.Key[0]}{lAdjacent}", item.Value);
                     }
                     try {
