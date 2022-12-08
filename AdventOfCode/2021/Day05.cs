@@ -3,7 +3,7 @@ using System;
 using System.Windows;
 
 namespace AOC2021 {
-    internal class Week05 : DayN {
+    internal class Day05 : DayN {
         static Point[] mStartPoints;
         static Point[] mEndPoints;
         static int[,] mArea;

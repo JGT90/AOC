@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week12 : DayN {
+    internal class Day12 : DayN {
         Dictionary<string, Node<string>> mNodes = new Dictionary<string, Node<string>>();
         static int PathCount;
         public override string Part1() {

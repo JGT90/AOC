@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AOC2021 {
-    internal class Week13 : DayN {
+    internal class Day13 : DayN {
         bool[,] TransparentList = new bool[1311, 895];
         List<FoldingInstruction> FoldingInstructions = new List<FoldingInstruction>();
         public override string Part1() {

@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week07 : DayN {
+    internal class Day07 : DayN {
         static int[] mValues;
         static int mMinValue;
         static int mMaxValue;

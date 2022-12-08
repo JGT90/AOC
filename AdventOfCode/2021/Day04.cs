@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week04 : DayN {
+    internal class Day04 : DayN {
         static int[] mCardDrawn;
         static List<int[,]> mBingoFields;
         const int BINGO_SIZE = 5;

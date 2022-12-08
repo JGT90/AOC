@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AOC2021 {
-    internal class Week19 : DayN {
+    internal class Day19 : DayN {
         List<Scanner> mScanners = new List<Scanner>();
         public override string Part1() {
             string[] lInput = System.IO.File.ReadAllLines(@"..\..\..\Inputs\Week19.txt");

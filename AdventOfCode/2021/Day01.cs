@@ -2,7 +2,7 @@
 using System;
 
 namespace AOC2021 {
-    internal class Week01 : DayN {
+    internal class Day01 : DayN {
         static int[] mValues;
         public override string Part1() {
             string[] lines = System.IO.File.ReadAllLines(@"..\..\..\Inputs\Week01.txt");

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week24 : DayN {
+    internal class Day24 : DayN {
 
         List<InstructionData> mInstructions = new List<InstructionData>();
         int[] Calculations;

@@ -6,7 +6,7 @@ using System.Linq;
 using SEGCC;
 
 namespace AOC2021 {
-    internal class Week11 : DayN {
+    internal class Day11 : DayN {
         const int SIZE = 10;
         static int[,] mInput = new int[SIZE,SIZE];
         static int[,] mTemp = new int[SIZE,SIZE];

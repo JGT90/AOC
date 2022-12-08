@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 namespace AOC2021 {
-    internal class Week09 : DayN {
+    internal class Day09 : DayN {
         static int[,] mHeightMap;
         static bool[,] mDone;
 

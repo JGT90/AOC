@@ -2,7 +2,7 @@
 using System;
 
 namespace AOC2021 {
-    internal class Week20 : DayN {
+    internal class Day20 : DayN {
         int[] mEnhancementLookup;
         int[,] mImage;
         public override string Part1() {

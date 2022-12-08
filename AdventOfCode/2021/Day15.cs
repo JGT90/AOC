@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AOC2021 {
-    internal class Week15 : DayN {
+    internal class Day15 : DayN {
         const int START_INDEX = 0;
         int Y_SIZE;
         int X_SIZE;

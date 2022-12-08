@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week18 : DayN {
+    internal class Day18 : DayN {
         List<Snailfish> mSnailfishes;
         string[] mInput;
         int mIndex = 0;

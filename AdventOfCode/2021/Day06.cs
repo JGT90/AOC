@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week06 : DayN {
+    internal class Day06 : DayN {
         static double[] mLaternFishPopulation;
         static double[] mTemp;
         static double mTotalLaternFishPopulation;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week25 : DayN {
+    internal class Day25 : DayN {
         char[,] mValues;
 
 

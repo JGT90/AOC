@@ -1,7 +1,7 @@
 ﻿using SEGCC;
 
 namespace AOC2021 {
-    internal class Week21 : DayN {
+    internal class Day21 : DayN {
         private double Player1WinCount;
         private double Player2WinCount;
         private int[] UniverseTimes = new int[] { 1, 3, 6, 7, 6, 3, 1 };

@@ -2,7 +2,7 @@
 using System;
 
 namespace AOC2021 {
-    internal class Week02 : DayN {
+    internal class Day02 : DayN {
         const string FORWARD = "forward";
         const string DOWN = "down";
         const string UP = "up";

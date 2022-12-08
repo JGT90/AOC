@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AOC2021 {
-    internal class Week22 : DayN {
+    internal class Day22 : DayN {
         Cube[] mCubes;
 
 

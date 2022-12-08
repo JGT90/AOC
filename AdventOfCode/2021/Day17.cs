@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week17 : DayN {
+    internal class Day17 : DayN {
         int mTargetX1;
         int mTargetX2;
         int mTargetY1;

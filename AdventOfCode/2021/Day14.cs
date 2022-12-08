@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week14 : DayN {
+    internal class Day14 : DayN {
         string mStartString = string.Empty;
         Dictionary<string, string> mPolymer = new Dictionary<string, string>();
         Dictionary<string, double> mPolymerQuantity = new Dictionary<string, double>();

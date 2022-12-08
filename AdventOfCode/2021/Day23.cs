@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC2021 {
-    internal class Week23 : DayN {
+    internal class Day23 : DayN {
 
         static int[] k_home_columns = { 2, 4, 6, 8 };
         static int[] k_hallway_parking_spot_columns = { 0, 1, 3, 5, 7, 9, 10 };

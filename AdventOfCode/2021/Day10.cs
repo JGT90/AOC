@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 namespace AOC2021 {
-    internal class Week10 : DayN {
+    internal class Day10 : DayN {
         static string[] mInput;
         const char OPEN_ROUND_BRACKET = '(';
         const char CLOSE_ROUND_BRACKET = ')';

@@ -2,7 +2,7 @@
 using System;
 
 namespace AOC2021 {
-    internal class Week08 : DayN {
+    internal class Day08 : DayN {
         static string[] mSignalPattern;
         static string[] mOutputValues;
 
