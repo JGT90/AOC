@@ -66,7 +66,7 @@ namespace AdventOfCode.Year2022 {
                 case "07":
                 case "7":
                     Day07 week07 = new Day07();
-                    week07.Run();
+                    week07.SolveAllPuzzle();
                     break;
                 case "08":
                 case "8":

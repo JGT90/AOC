@@ -4,44 +4,23 @@ using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Year2022 {
-    class Day07 : DayN {
-        CustomDirectory MainDirectory;
-        public override string Part1() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day07.txt";
-            MainDirectory = new CustomDirectory();
-            string[] lLines = File.ReadAllLines(lPath);
-            var lActualDir = MainDirectory;
-            try {
-                for (int i = 1; i < lLines.Length; i++) {
-                    if (lLines[i] == "$ ls") {
-                        i++;
-                        while (!lLines[i].StartsWith("$")) {
+    class Day07 : DayN_2022 {
 
-                            if (lLines[i].Contains("dir")) {
-                                if (lActualDir.SubDirectory == null) lActualDir.SubDirectory = new List<CustomDirectory>();
-                                string[] lSplit = lLines[i].Split(' ');
-                                lActualDir.SubDirectory.Add(new CustomDirectory() { Name = lSplit[1], Parent = lActualDir });
-                            } else if (!lLines[i].StartsWith("$")) {
-                                string[] lSPlit = lLines[i].Split(' ');
-                                if (lActualDir.Files == null) lActualDir.Files = new List<CustomFile>();
-                                lActualDir.Files.Add(new CustomFile() { Name = lSPlit[1], Size = double.Parse(lSPlit[0]) });
-                            }
-                            i++;
-                        }
-                    }
-                    if (lLines[i].Contains("$ cd ..")) {
-                        lActualDir = lActualDir.Parent;
-                    } else if (lLines[i].Contains("$ cd")) {
-                        string[] lSplit = lLines[i].Split(' ');
-                        lActualDir = lActualDir.SubDirectory.Where(x => x.Name == lSplit[2]).FirstOrDefault();
-                    }
-                }
+        #region Fields
+        private CustomDirectory MainDirectory;
+        #endregion
 
-            } catch (Exception) { }
-            Recursive(MainDirectory);
-            double b = AddDirectorySize(MainDirectory, 100000);
-            return b.ToString();
+        #region Constructor
+        public Day07() {
+            AddInputData(@"2022/Day07-JGT90.txt");
         }
+        #endregion
+
+        #region Properties
+        protected override string PuzzleName => "No Space Left On Device";
+        #endregion
+
+        #region Methods
         private double AddDirectorySize(CustomDirectory lDirectory, double aLimit) {
             double lDirectorySize = 0;
             if (lDirectory.SubDirectory == null) return lDirectorySize;
@@ -74,8 +53,45 @@ namespace AdventOfCode.Year2022 {
             lDirectory.Size = lDirectorySize;
             return lDirectory.Size;
         }
+        #endregion
 
-        public override string Part2() {
+        #region Functions
+        public override string SolvePartOne() {
+            MainDirectory = new CustomDirectory();
+            var lActualDir = MainDirectory;
+            try {
+                for (int i = 1; i < RawData.Length; i++) {
+                    if (RawData[i] == "$ ls") {
+                        i++;
+                        while (!RawData[i].StartsWith("$")) {
+
+                            if (RawData[i].Contains("dir")) {
+                                if (lActualDir.SubDirectory == null) lActualDir.SubDirectory = new List<CustomDirectory>();
+                                string[] lSplit = RawData[i].Split(' ');
+                                lActualDir.SubDirectory.Add(new CustomDirectory() { Name = lSplit[1], Parent = lActualDir });
+                            } else if (!RawData[i].StartsWith("$")) {
+                                string[] lSPlit = RawData[i].Split(' ');
+                                if (lActualDir.Files == null) lActualDir.Files = new List<CustomFile>();
+                                lActualDir.Files.Add(new CustomFile() { Name = lSPlit[1], Size = double.Parse(lSPlit[0]) });
+                            }
+                            i++;
+                        }
+                    }
+                    if (RawData[i].Contains("$ cd ..")) {
+                        lActualDir = lActualDir.Parent;
+                    } else if (RawData[i].Contains("$ cd")) {
+                        string[] lSplit = RawData[i].Split(' ');
+                        lActualDir = lActualDir.SubDirectory.Where(x => x.Name == lSplit[2]).FirstOrDefault();
+                    }
+                }
+
+            } catch (Exception) { }
+            Recursive(MainDirectory);
+            double b = AddDirectorySize(MainDirectory, 100000);
+            return b.ToString();
+        }
+
+        public override string SolvePartTwo() {
             double lTotalDiskSpace = 70000000;
             double lFreeupSpace = 30000000;
             List<double> lSpaceFreed = new List<double>();
@@ -95,17 +111,20 @@ namespace AdventOfCode.Year2022 {
             }
             return lMin.ToString();
         }
-    }
+        #endregion
 
-    class CustomDirectory {
-        public string Name { get; set; }
-        public List<CustomDirectory> SubDirectory { get; set; }
-        public List<CustomFile> Files { get; set; }
-        public CustomDirectory Parent { get; set; }
-        public double Size { get; set; }
-    }
-    class CustomFile {
-        public string Name { get; set; }
-        public double Size { get; set; }
+        #region Classes
+        class CustomDirectory {
+            public string Name { get; set; }
+            public List<CustomDirectory> SubDirectory { get; set; }
+            public List<CustomFile> Files { get; set; }
+            public CustomDirectory Parent { get; set; }
+            public double Size { get; set; }
+        }
+        class CustomFile {
+            public string Name { get; set; }
+            public double Size { get; set; }
+        }
+        #endregion
     }
 }
