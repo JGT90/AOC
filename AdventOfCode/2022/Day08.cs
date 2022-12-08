@@ -1,20 +1,20 @@
 ﻿using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day08 {
+    class Day08 : DayN {
         int[,] TreeGrid;
-        public string DoPartA() {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day08.txt";
             string[] lLines = File.ReadAllLines(lPath);
-            TreeGrid = new int[lLines.Length,lLines[0].Length];
-            for(int y = 0; y < lLines.Length;y++) {
+            TreeGrid = new int[lLines.Length, lLines[0].Length];
+            for (int y = 0; y < lLines.Length; y++) {
                 for (int x = 0; x < lLines[y].Length; x++) {
                     TreeGrid[y, x] = int.Parse(lLines[y][x].ToString());
                 }
             }
-            int lVisible = lLines.Length * 2 + lLines[0].Length*2 - 4;
-            for (int y = 1; y < lLines.Length-1; y++) {
-                for (int x = 1; x < lLines[y].Length-1; x++) {
+            int lVisible = lLines.Length * 2 + lLines[0].Length * 2 - 4;
+            for (int y = 1; y < lLines.Length - 1; y++) {
+                for (int x = 1; x < lLines[y].Length - 1; x++) {
                     if (IsVisible(y, x, TreeGrid, lLines[0].Length, lLines.Length)) lVisible++;
                 }
             }
@@ -25,28 +25,28 @@ namespace AdventOfCode.Year2022 {
         private bool IsVisible(int yTree, int xTree, int[,] Grid, int GridLength, int GridHeight) {
             bool IsVisible = true;
             int Height = Grid[yTree, xTree];
-            for(int x = xTree-1; x >= 0; x--) {
+            for (int x = xTree - 1; x >= 0; x--) {
                 if (Grid[yTree, x] >= Height) IsVisible = false;
             }
             if (IsVisible) return IsVisible;
             IsVisible = true;
-            for (int x = xTree+1; x < GridLength; x++) {
+            for (int x = xTree + 1; x < GridLength; x++) {
                 if (Grid[yTree, x] >= Height) IsVisible = false;
             }
             if (IsVisible) return IsVisible;
             IsVisible = true;
-            for (int y = yTree-1; y >= 0; y--) {
+            for (int y = yTree - 1; y >= 0; y--) {
                 if (Grid[y, xTree] >= Height) IsVisible = false;
             }
             if (IsVisible) return IsVisible;
             IsVisible = true;
-            for (int y = yTree+1; y < GridHeight; y++) {
+            for (int y = yTree + 1; y < GridHeight; y++) {
                 if (Grid[y, xTree] >= Height) IsVisible = false;
             }
             return IsVisible;
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             int Length = TreeGrid.GetLength(0);
             int Height = TreeGrid.GetLength(1);
             int[,] ScoreGrid = new int[Height, Length];

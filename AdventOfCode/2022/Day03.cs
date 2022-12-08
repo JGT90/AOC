@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day03 {
-        public string DoPartA() {
+    class Day03 : DayN {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day03.txt";
             double lPrioritySum = 0;
             foreach(string lLine in File.ReadAllLines(lPath)) {
@@ -28,7 +28,7 @@ namespace AdventOfCode.Year2022 {
             return lPrioritySum.ToString();
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day03.txt";
             double lPrioritySum = 0;
             string[] lLines = File.ReadAllLines(lPath);

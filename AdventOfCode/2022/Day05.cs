@@ -1,8 +1,8 @@
 ﻿using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day05 {
-        public string DoPartA() {
+    class Day05 : DayN {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day05.txt";
             string[] lStacks = new string[10];
             //lStacks[1] = "ZN";
@@ -29,14 +29,14 @@ namespace AdventOfCode.Year2022 {
                 int To = int.Parse(lSplit[5]);
                 int Length = int.Parse(lSplit[1]);
                 for (int i = 0; i < Length; i++) {
-                    lStacks[To] += lStacks[From][lStacks[From].Length - 1-i];
+                    lStacks[To] += lStacks[From][lStacks[From].Length - 1 - i];
                 }
                 lStacks[From] = lStacks[From].Remove(lStacks[From].Length - Length);
             }
             return $"{lStacks[1][lStacks[1].Length - 1]}{lStacks[2][lStacks[2].Length - 1]}{lStacks[3][lStacks[3].Length - 1]}{lStacks[4][lStacks[4].Length - 1]}{lStacks[5][lStacks[5].Length - 1]}{lStacks[6][lStacks[6].Length - 1]}{lStacks[7][lStacks[7].Length - 1]}{lStacks[8][lStacks[8].Length - 1]}{lStacks[9][lStacks[9].Length - 1]}";
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day05.txt";
             string[] lStacks = new string[10];
             //lStacks[1] = "ZN";

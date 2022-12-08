@@ -1,8 +1,8 @@
 ﻿using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day04 {
-        public string DoPartA() {
+    class Day04 : DayN {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day04.txt";
             int lCountPairs = 0;
             foreach (string lLine in File.ReadAllLines(lPath)) {
@@ -17,7 +17,7 @@ namespace AdventOfCode.Year2022 {
             return lCountPairs.ToString();
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day04.txt";
             int lOverlap = 0;
             foreach (string lLine in File.ReadAllLines(lPath)) {

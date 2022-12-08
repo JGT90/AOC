@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Year2022 {
-    class Day01 {
+    class Day01 : DayN {
         int[] mElfes;
-        public string DoPartA() {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day01.txt";
             List<int> lElfes = new List<int>();
             lElfes.Add(0);
@@ -17,7 +17,7 @@ namespace AdventOfCode.Year2022 {
             return lElfes.Max().ToString();
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             int lThirdMax = int.MinValue;
             int lSecondMax = int.MinValue;
             int lFirstMax = int.MinValue;

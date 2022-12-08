@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Year2022 {
-    class Day07 {
+    class Day07 : DayN {
         CustomDirectory MainDirectory;
-        public string DoPartA() {
+        public override string Part1() {
             string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day07.txt";
             MainDirectory = new CustomDirectory();
             string[] lLines = File.ReadAllLines(lPath);
@@ -15,7 +15,7 @@ namespace AdventOfCode.Year2022 {
                 for (int i = 1; i < lLines.Length; i++) {
                     if (lLines[i] == "$ ls") {
                         i++;
-                        while(!lLines[i].StartsWith("$")) {
+                        while (!lLines[i].StartsWith("$")) {
 
                             if (lLines[i].Contains("dir")) {
                                 if (lActualDir.SubDirectory == null) lActualDir.SubDirectory = new List<CustomDirectory>();
@@ -27,8 +27,8 @@ namespace AdventOfCode.Year2022 {
                                 lActualDir.Files.Add(new CustomFile() { Name = lSPlit[1], Size = double.Parse(lSPlit[0]) });
                             }
                             i++;
-                        } 
-                    } 
+                        }
+                    }
                     if (lLines[i].Contains("$ cd ..")) {
                         lActualDir = lActualDir.Parent;
                     } else if (lLines[i].Contains("$ cd")) {
@@ -37,7 +37,7 @@ namespace AdventOfCode.Year2022 {
                     }
                 }
 
-            } catch(Exception) { }
+            } catch (Exception) { }
             Recursive(MainDirectory);
             double b = AddDirectorySize(MainDirectory, 100000);
             return b.ToString();
@@ -45,7 +45,7 @@ namespace AdventOfCode.Year2022 {
         private double AddDirectorySize(CustomDirectory lDirectory, double aLimit) {
             double lDirectorySize = 0;
             if (lDirectory.SubDirectory == null) return lDirectorySize;
-            foreach(CustomDirectory lDir in lDirectory.SubDirectory) {
+            foreach (CustomDirectory lDir in lDirectory.SubDirectory) {
                 lDirectorySize += AddDirectorySize(lDir, aLimit);
                 if (lDir.Size <= aLimit) {
                     lDirectorySize += lDir.Size;
@@ -56,14 +56,14 @@ namespace AdventOfCode.Year2022 {
         private double Recursive(CustomDirectory lDirectory) {
             double lDirectorySize = 0;
             if (lDirectory.SubDirectory == null) {
-                foreach(CustomFile lFile in lDirectory.Files) {
+                foreach (CustomFile lFile in lDirectory.Files) {
                     lDirectorySize += lFile.Size;
                 }
                 lDirectory.Size = lDirectorySize;
                 return lDirectory.Size;
             }
             lDirectorySize = 0;
-            foreach(CustomDirectory lDir in lDirectory.SubDirectory) {
+            foreach (CustomDirectory lDir in lDirectory.SubDirectory) {
                 lDirectorySize += Recursive(lDir);
             }
             if (lDirectory.Files != null) {
@@ -75,7 +75,7 @@ namespace AdventOfCode.Year2022 {
             return lDirectory.Size;
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             double lTotalDiskSpace = 70000000;
             double lFreeupSpace = 30000000;
             List<double> lSpaceFreed = new List<double>();
@@ -88,10 +88,10 @@ namespace AdventOfCode.Year2022 {
             }
             lSpaceFreed.Add(RecursiveB(MainDirectory, ref lSpaceFreed));
             double lMin = double.MaxValue;
-            foreach(double lSpace in lSpaceFreed) {
+            foreach (double lSpace in lSpaceFreed) {
                 if ((lTotalDiskSpace - MainDirectory.Size + lSpace) > lFreeupSpace) {
                     if (lMin > lSpace) lMin = lSpace;
-                } 
+                }
             }
             return lMin.ToString();
         }
@@ -99,7 +99,7 @@ namespace AdventOfCode.Year2022 {
 
     class CustomDirectory {
         public string Name { get; set; }
-        public List<CustomDirectory> SubDirectory { get; set; } 
+        public List<CustomDirectory> SubDirectory { get; set; }
         public List<CustomFile> Files { get; set; }
         public CustomDirectory Parent { get; set; }
         public double Size { get; set; }

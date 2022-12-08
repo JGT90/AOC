@@ -3,8 +3,8 @@ using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Year2022 {
-    class Day02 {
-        public string DoPartA() {
+    class Day02 : DayN {
+        public override string Part1() {
             Dictionary<string, int> lConverter = new Dictionary<string, int>();
             lConverter.Add("A", 1);
             lConverter.Add("X", 1);
@@ -39,7 +39,7 @@ namespace AdventOfCode.Year2022 {
             return lTotalScore.ToString();
         }
 
-        public string DoPartB() {
+        public override string Part2() {
             Dictionary<string, int> lConverter = new Dictionary<string, int>();
             lConverter.Add("A", 1);
             lConverter.Add("X", 1);
