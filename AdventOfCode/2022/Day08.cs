@@ -1,21 +1,25 @@
 ﻿using System.IO;
 
 namespace AdventOfCode.Year2022 {
-    class Day08 : DayN {
-        int[,] TreeGrid;
-        public override string Part1() {
-            string lPath = @"C:\Users\jgt\source\repos\AdventOfCode\AdventOfCode2022\Input\Day08.txt";
-            string[] lLines = File.ReadAllLines(lPath);
-            TreeGrid = new int[lLines.Length, lLines[0].Length];
-            for (int y = 0; y < lLines.Length; y++) {
-                for (int x = 0; x < lLines[y].Length; x++) {
-                    TreeGrid[y, x] = int.Parse(lLines[y][x].ToString());
+    class Day08 : DayN_2022 {
+        private int[,] _TreeGrid;
+
+        public Day08() {
+            AddInputData(@"2022/Day08-JGT90.txt");
+        }
+
+        protected override string PuzzleName { get; } = "Treetop Tree House";
+        public override string SolvePartOne() {
+            _TreeGrid = new int[RawData.Length, RawData[0].Length];
+            for (int y = 0; y < RawData.Length; y++) {
+                for (int x = 0; x < RawData[y].Length; x++) {
+                    _TreeGrid[y, x] = int.Parse(RawData[y][x].ToString());
                 }
             }
-            int lVisible = lLines.Length * 2 + lLines[0].Length * 2 - 4;
-            for (int y = 1; y < lLines.Length - 1; y++) {
-                for (int x = 1; x < lLines[y].Length - 1; x++) {
-                    if (IsVisible(y, x, TreeGrid, lLines[0].Length, lLines.Length)) lVisible++;
+            int lVisible = RawData.Length * 2 + RawData[0].Length * 2 - 4;
+            for (int y = 1; y < RawData.Length - 1; y++) {
+                for (int x = 1; x < RawData[y].Length - 1; x++) {
+                    if (IsVisible(y, x, _TreeGrid, RawData[0].Length, RawData.Length)) lVisible++;
                 }
             }
 
@@ -46,13 +50,13 @@ namespace AdventOfCode.Year2022 {
             return IsVisible;
         }
 
-        public override string Part2() {
-            int Length = TreeGrid.GetLength(0);
-            int Height = TreeGrid.GetLength(1);
+        public override string SolvePartTwo() {
+            int Length = _TreeGrid.GetLength(0);
+            int Height = _TreeGrid.GetLength(1);
             int[,] ScoreGrid = new int[Height, Length];
             for (int y = 0; y < Height; y++) {
                 for (int x = 0; x < Length; x++) {
-                    ScoreGrid[y, x] = ScenicScore(y, x, TreeGrid, Length, Height);
+                    ScoreGrid[y, x] = ScenicScore(y, x, _TreeGrid, Length, Height);
                 }
             }
             int HighestScenicScore = int.MinValue;

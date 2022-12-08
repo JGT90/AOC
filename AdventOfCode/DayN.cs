@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -8,6 +9,55 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode
 {
+    public abstract class DayN_2022 {
+        #region Fields
+        private const string RELATIVE_PATH = @"..\..\InputData\";
+        private List<string> _InputFiles = new List<string>();
+        #endregion
+
+        #region Properties
+        protected abstract string PuzzleName { get; }
+        public string[] RawData { get; private set; }
+        #endregion
+
+        #region Functions
+        protected void AddInputData(string InputFile) => _InputFiles.Add(InputFile);
+        protected string[] ReadFile(string FilePath, bool RemoveEmptyLines = false) {
+            return File.ReadAllText(RELATIVE_PATH + FilePath).Replace("\r", string.Empty).Split(new char[] { '\n' }, RemoveEmptyLines ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+        }
+        public virtual void SolveAllPuzzle() {
+            Console.WriteLine(PuzzleName);
+            foreach  (string _InputFile in _InputFiles) {
+                Console.WriteLine(_InputFile);
+                Stopwatch lWatch = Stopwatch.StartNew();
+                RawData = ReadFile(_InputFile);
+                Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Initialization\r\n");
+                lWatch.Restart();
+                string _result = SolvePartOne();
+                Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Part 1 ==> {_result}\r\n");
+                lWatch.Restart();
+                _result = SolvePartTwo();
+                Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Part 2 ==> {_result}\r\n");
+            }
+        }
+        public virtual void SolvePuzzle() {
+            if (_InputFiles.Count == 0) return;
+            Console.WriteLine(PuzzleName);
+            Console.WriteLine(_InputFiles[0]);
+            Stopwatch lWatch = Stopwatch.StartNew();
+            RawData = ReadFile(_InputFiles[0]);
+            Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Initialization\r\n");
+            lWatch.Restart();
+            string _result = SolvePartOne();
+            Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Part 1 ==> {_result}\r\n");
+            lWatch.Restart();
+            _result = SolvePartTwo();
+            Console.WriteLine($"\t{lWatch.Elapsed.TotalSeconds.ToString("0.0000000", CultureInfo.InvariantCulture)}s Part 2 ==> {_result}\r\n");
+        }
+        public abstract string SolvePartOne();
+        public abstract string SolvePartTwo();
+        #endregion
+    }
     /// <summary>
     /// Base class for SEGCC Puzzles Solutions
     /// <remarks>
