@@ -19,14 +19,16 @@ namespace AdventOfCode
 
         public DayN_2022() {
             foreach(KeyValuePair<string, string> _SessionID in SessionIDs) {
-                string _path = $"{RELATIVE_PATH}{Year}\\Day{Day.ToString("0.00")}\\{_SessionID.Key}.txt";
-                if (!File.Exists(_path) {
+                string _fileName = $"Day{ Day.ToString("00")}-{ _SessionID.Key}.txt";
+                string _path = $"{RELATIVE_PATH}{Year}\\{_fileName}";
+                if (!File.Exists(_path)) {
                     string _address = $"https://adventofcode.com/2022/day/" + Day + "/input";
                     System.Net.WebClient _webClient = new System.Net.WebClient();
                     _webClient.Headers.Add(System.Net.HttpRequestHeader.Cookie, _SessionID.Value);
                     string _content = _webClient.DownloadString(_address);
-                    if (_content != null) File.WriteAllText(_path, _content);
+                    if (_content != null) File.WriteAllText(_path, _content.Trim());
                 }
+                AddInputData(_fileName);
             }
         }
 
@@ -40,7 +42,7 @@ namespace AdventOfCode
         #region Functions
         protected void AddInputData(string InputFile) => _InputFiles.Add(InputFile);
         protected string[] ReadFile(string FilePath, bool RemoveEmptyLines = false) {
-            return File.ReadAllText(RELATIVE_PATH + FilePath).Replace("\r", string.Empty).Split(new char[] { '\n' }, RemoveEmptyLines ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+            return File.ReadAllText($"{RELATIVE_PATH}{Year}\\{FilePath}").Replace("\r", string.Empty).Split(new char[] { '\n' }, RemoveEmptyLines ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
         }
         public virtual void SolveAllPuzzle() {
             Console.WriteLine(PuzzleName);
