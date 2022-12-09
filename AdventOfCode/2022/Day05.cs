@@ -4,12 +4,14 @@ namespace AdventOfCode.Year2022 {
     class Day05 : DayN_2022 {
         #region Constructor
         public Day05() {
-            AddInputData(@"2022/Day05-JGT90.txt");
+            AddInputData(@"Day05-JGT90.txt");
         }
         #endregion
 
         #region Properties
         protected override string PuzzleName => "Supply Stacks";
+        protected override int Day => 5;
+        protected override int Year => 2022;
         #endregion
 
         #region Methods

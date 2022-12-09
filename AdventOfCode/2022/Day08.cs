@@ -8,12 +8,14 @@ namespace AdventOfCode.Year2022 {
 
         #region Constructor
         public Day08() {
-            AddInputData(@"2022/Day08-JGT90.txt");
+            AddInputData(@"Day08-JGT90.txt");
         }
         #endregion
 
         #region Properties
         protected override string PuzzleName => "Treetop Tree House";
+        protected override int Day => 8;
+        protected override int Year => 2022;
         #endregion
 
         #region Methods

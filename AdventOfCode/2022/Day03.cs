@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 
 namespace AdventOfCode.Year2022 {
     class Day03 : DayN_2022 {
         #region Constructor
         public Day03() {
-            AddInputData(@"2022/Day03-JGT90.txt");
+            AddInputData(@"Day03-JGT90.txt");
         }
         #endregion
 
         #region Properties
         protected override string PuzzleName => "Rucksack Reorganization";
+        protected override int Day => 3;
+        protected override int Year => 2022;
         #endregion
 
         #region Functions

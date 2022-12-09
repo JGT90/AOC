@@ -13,7 +13,7 @@ namespace AdventOfCode.Year2022 {
             Console.WriteLine("\t- Day 06:  Tuning Trouble");
             Console.WriteLine("\t- Day 07:  No Space Left On Device");
             Console.WriteLine("\t- Day 08:  Treetop Tree House");
-            Console.WriteLine("\t- Day 09:  Smoke Basin");
+            Console.WriteLine("\t- Day 09:  Rope Bridge");
             //Console.WriteLine("\t- Day 10: Syntax Scoring");
             //Console.WriteLine("\t- Day 11: Dumbo Octopus");
             //Console.WriteLine("\t- Day 12: Passage Pathing");

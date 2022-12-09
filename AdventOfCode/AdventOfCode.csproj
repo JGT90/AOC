@@ -70,6 +70,7 @@
     <Compile Include="2021\Day23.cs" />
     <Compile Include="2021\Day24.cs" />
     <Compile Include="2021\Day25.cs" />
+    <Compile Include="2022\Day09.cs" />
     <Compile Include="DayN.cs" />
     <Compile Include="2022\Day01.cs" />
     <Compile Include="2022\Day02.cs" />

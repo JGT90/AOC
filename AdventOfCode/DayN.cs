@@ -13,9 +13,26 @@ namespace AdventOfCode
         #region Fields
         private const string RELATIVE_PATH = @"..\..\InputData\";
         private List<string> _InputFiles = new List<string>();
+        private Dictionary<string, string> SessionIDs = new Dictionary<string, string>() { { "JGT90", "session=53616c7465645f5ff05c8dabfb4b4ba7ace046e987eba38a1aa25fcc4911a9b867d5e46e93c42b53174b3a1d01ce90261e4f1a572aa86ee4a1b7b3eb16fcdbc4" },
+                                                                                            {"SEGCC", "session=53616c7465645f5f9055007aeff710dcde9632e9416170475f7758b8232db4e4f8ecc0bde35b1ce70923e6d7dd64e8d65468be477003167d384244afa922dbb6" }  };
         #endregion
 
+        public DayN_2022() {
+            foreach(KeyValuePair<string, string> _SessionID in SessionIDs) {
+                string _path = $"{RELATIVE_PATH}{Year}\\Day{Day.ToString("0.00")}\\{_SessionID.Key}.txt";
+                if (!File.Exists(_path) {
+                    string _address = $"https://adventofcode.com/2022/day/" + Day + "/input";
+                    System.Net.WebClient _webClient = new System.Net.WebClient();
+                    _webClient.Headers.Add(System.Net.HttpRequestHeader.Cookie, _SessionID.Value);
+                    string _content = _webClient.DownloadString(_address);
+                    if (_content != null) File.WriteAllText(_path, _content);
+                }
+            }
+        }
+
         #region Properties
+        protected abstract int Day { get; }
+        protected abstract int Year { get; }
         protected abstract string PuzzleName { get; }
         public string[] RawData { get; private set; }
         #endregion

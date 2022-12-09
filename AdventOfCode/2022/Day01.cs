@@ -10,12 +10,17 @@ namespace AdventOfCode.Year2022 {
 
         #region Constructor
         public Day01() {
-            AddInputData(@"2022/Day01-JGT90.txt");
+            AddInputData(@"Day01-JGT90.txt");
         }
         #endregion
 
         #region Properties
         protected override string PuzzleName => "Calorie Counting";
+        protected override int Day => 1;
+        protected override int Year => 2022;
+        #endregion
+
+        #region Functions
         public override string SolvePartOne() {
             List<int> lElfes = new List<int>();
             lElfes.Add(0);
